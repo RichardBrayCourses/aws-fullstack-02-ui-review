@@ -111,37 +111,37 @@ export default ({ searchQuery }: HomeProps) => {
           No matching artwork. Try a different search.
         </p>
       ) : (
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {filteredPhotos.map((photo) => (
-          <Card
-            key={photo.id}
-            className="group cursor-pointer overflow-hidden transition-shadow hover:shadow-md"
-            role="button"
-            tabIndex={0}
-            onClick={() => setSelectedPhoto(photo)}
-            onKeyDown={(event) => {
-              if (event.key === "Enter" || event.key === " ") {
-                event.preventDefault();
-                setSelectedPhoto(photo);
-              }
-            }}
-            aria-label={`Open ${photo.title} preview`}
-          >
-            <CardContent className="p-0">
-              <img
-                src={photo.small}
-                alt={photo.title}
-                className="h-40 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                loading="lazy"
-              />
-            </CardContent>
-            <CardHeader>
-              <CardTitle className="text-xl">{photo.title}</CardTitle>
-              <p className="text-muted-foreground">{photo.description}</p>
-            </CardHeader>
-          </Card>
-        ))}
-      </div>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {filteredPhotos.map((photo) => (
+            <Card
+              key={photo.id}
+              className="group cursor-pointer overflow-hidden transition-shadow hover:shadow-md"
+              role="button"
+              tabIndex={0}
+              onClick={() => setSelectedPhoto(photo)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  setSelectedPhoto(photo);
+                }
+              }}
+              aria-label={`Open ${photo.title} preview`}
+            >
+              <CardContent className="p-0">
+                <img
+                  src={photo.small}
+                  alt={photo.title}
+                  className="h-40 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </CardContent>
+              <CardHeader>
+                <CardTitle className="text-xl">{photo.title}</CardTitle>
+                <p className="text-muted-foreground">{photo.description}</p>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
       )}
       {selectedPhoto && (
         <div
