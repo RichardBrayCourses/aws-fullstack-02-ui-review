@@ -21,15 +21,12 @@ type HeaderProps = {
 
 export default ({ searchQuery, onSearchQueryChange }: HeaderProps) => {
   const location = useLocation();
-  const navigate = useNavigate();
 
   const { authenticated, login, logout } = useAuth();
 
   const logoutUser = async () => {
     logout();
   };
-
-  const goToProfile = () => navigate("/profile");
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
@@ -64,10 +61,18 @@ export default ({ searchQuery, onSearchQueryChange }: HeaderProps) => {
                   : "text-muted-foreground"
               }`}
             >
-              🎨
+              🎨 Home
             </Link>
-
-            {/* Removed Profile from the top nav */}
+            <Link
+              to="/profile"
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                location.pathname === "/profile"
+                  ? "text-primary"
+                  : "text-muted-foreground"
+              }`}
+            >
+              Profile
+            </Link>
           </nav>
           <ThemeToggle />
 
@@ -86,7 +91,6 @@ export default ({ searchQuery, onSearchQueryChange }: HeaderProps) => {
                 <DropdownMenuItem onClick={login}>Login</DropdownMenuItem>
               )}
               <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={goToProfile}>Profile</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
