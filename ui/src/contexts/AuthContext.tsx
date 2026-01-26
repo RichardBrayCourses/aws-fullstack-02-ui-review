@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         authenticated: !!user,
         login: () =>
           setUser({
-            name: "Demo User",
+            nickName: "Demo User",
             email: "demo@example.com",
           }),
         logout: () => setUser(null),
