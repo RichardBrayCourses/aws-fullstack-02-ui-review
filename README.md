@@ -25,11 +25,14 @@ Then go to http://localhost:3000/ in your browser.
 # Section Contents
 
 - Introduction
+- Cloning the repo, building and running the UI application
 - Walkthrough of Application UI and features
-- Vite/React/Typescript scaffolding
-- Tailwind and ShadCN scaffolding
-- React Router - Header, Home and Profile
-- Image Display and Search
-- Login / Logout
+- Vite/React/Typescript
+- Tailwind and ShadCN
+- React Router
+- Header, Home and Profile pages
+- Home Page : Image Display and Search
 - React Context
+- Profile Page : Login / Logout
+- Header Dropdown menu : Login / Logout
 - Dark Mode toggle
